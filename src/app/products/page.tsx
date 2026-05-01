@@ -1,17 +1,43 @@
 const glasses = [
-  { id: 1, name: "Classic Aviator", brand: "RayBan", price: "$149", color: "Gold/Green" },
+  {
+    id: 1,
+    name: "Classic Aviator",
+    brand: "RayBan",
+    price: "$149",
+    color: "Gold/Green",
+  },
   { id: 2, name: "Wayfarer", brand: "RayBan", price: "$129", color: "Black" },
-  { id: 3, name: "Round Metal", brand: "Persol", price: "$199", color: "Silver/Blue" },
+  {
+    id: 3,
+    name: "Round Metal",
+    brand: "Persol",
+    price: "$199",
+    color: "Silver/Blue",
+  },
   { id: 4, name: "Cat Eye", brand: "Oakley", price: "$169", color: "Tortoise" },
-  { id: 5, name: "Clubmaster", brand: "RayBan", price: "$159", color: "Brown/Gold" },
-  { id: 6, name: "Sport Wrap", brand: "Oakley", price: "$189", color: "Matte Black" },
+  {
+    id: 5,
+    name: "Clubmaster",
+    brand: "RayBan",
+    price: "$159",
+    color: "Brown/Gold",
+  },
+  {
+    id: 6,
+    name: "Sport Wrap",
+    brand: "Oakley",
+    price: "$189",
+    color: "Matte Black",
+  },
 ];
 
 export default function ProductsPage() {
   return (
     <main style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
       <h1>Glasses</h1>
-      <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "1rem" }}>
+      <ul
+        style={{ listStyle: "none", padding: 0, display: "grid", gap: "1rem" }}
+      >
         {glasses.map((item) => (
           <li
             key={item.id}
