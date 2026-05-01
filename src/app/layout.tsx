@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -24,25 +19,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
-        <nav
-          style={{
-            display: "flex",
-            gap: "1.5rem",
-            padding: "1rem 2rem",
-            borderBottom: "1px solid #ddd",
-            fontFamily: "var(--font-geist-sans)",
-          }}
-        >
-          <Link href="/" style={{ fontWeight: "bold", textDecoration: "none" }}>
-            Home
-          </Link>
-          <Link href="/products" style={{ textDecoration: "none" }}>
-            Products
-          </Link>
-        </nav>
-        {children}
+    <html lang="en" className={inter.variable}>
+      <body className="min-h-screen w-full bg-background text-foreground">
+        <header className="bg-gradient-to-r from-violet-500 via-pink-500 to-orange-400 shadow-md">
+          <nav className="mx-auto w-full max-w-[800px] flex items-center gap-6 px-6 py-3">
+            <Link
+              href="/"
+              className="text-sm font-extrabold tracking-tight text-white hover:opacity-80"
+            >
+              🛍️ MyShop
+            </Link>
+            <div className="flex gap-4 text-sm text-white/80">
+              <Link
+                href="/"
+                className="hover:text-white transition-colors font-medium"
+              >
+                Home
+              </Link>
+              <Link
+                href="/products"
+                className="hover:text-white transition-colors font-medium"
+              >
+                Products
+              </Link>
+            </div>
+          </nav>
+        </header>
+        <main className="mx-auto w-full max-w-[800px] px-6 py-8">
+          {children}
+        </main>
       </body>
     </html>
   );
